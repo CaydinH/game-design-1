@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvlne50rqnp2r"]
+
+[ext_resource type="Script" path="res://about_me.gd" id="1_kk568"]
+[ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Big_Font.tres" id="2_8lisw"]
+
+[node name="AboutMe" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kk568")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 227.0
+offset_top = 42.0
+offset_right = 887.0
+offset_bottom = 388.0
+theme = ExtResource("2_8lisw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnShow" type="Button" parent="."]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 409.0
+offset_right = 381.0
+offset_bottom = 608.0
+theme = ExtResource("2_8lisw")
+text = "Show"
+
+[node name="BtnHide" type="Button" parent="."]
+offset_left = 426.0
+offset_top = 413.0
+offset_right = 756.0
+offset_bottom = 612.0
+theme = ExtResource("2_8lisw")
+text = "Clear"
+
+[node name="BtnExit" type="Button" parent="."]
+offset_left = 780.0
+offset_top = 417.0
+offset_right = 1110.0
+offset_bottom = 616.0
+theme = ExtResource("2_8lisw")
+text = "Exit"
+
+[connection signal="pressed" from="BtnShow" to="." method="_on_btn_show_pressed"]
+[connection signal="pressed" from="BtnHide" to="." method="_on_btn_hide_pressed"]
+[connection signal="pressed" from="BtnExit" to="." method="_on_btn_exit_pressed"]
