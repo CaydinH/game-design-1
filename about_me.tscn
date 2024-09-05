@@ -32,6 +32,7 @@ theme = ExtResource("2_8lisw")
 text = "Show"
 
 [node name="BtnHide" type="Button" parent="."]
+layout_mode = 0
 offset_left = 426.0
 offset_top = 413.0
 offset_right = 756.0
@@ -40,6 +41,7 @@ theme = ExtResource("2_8lisw")
 text = "Clear"
 
 [node name="BtnExit" type="Button" parent="."]
+layout_mode = 0
 offset_left = 780.0
 offset_top = 417.0
 offset_right = 1110.0
