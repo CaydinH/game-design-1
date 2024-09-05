@@ -1,0 +1,97 @@
+[gd_scene load_steps=3 format=3 uid="uid://jkhfickt61xw"]
+
+[ext_resource type="Script" path="res://LangDocs/prog_54b.gd" id="1_xbqb6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g6exr"]
+font_size = 38
+
+[node name="Prog54b" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xbqb6")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 91.0
+offset_right = 230.0
+offset_bottom = 144.0
+text = "Numbers:"
+label_settings = SubResource("LabelSettings_g6exr")
+vertical_alignment = 1
+
+[node name="LblSum" type="Label" parent="."]
+layout_mode = 0
+offset_left = 481.0
+offset_top = 106.0
+offset_right = 1066.0
+offset_bottom = 229.0
+text = "The sum of the four
+ numbers is "
+label_settings = SubResource("LabelSettings_g6exr")
+vertical_alignment = 1
+
+[node name="LblAve" type="Label" parent="."]
+layout_mode = 0
+offset_left = 482.0
+offset_top = 255.0
+offset_right = 663.0
+offset_bottom = 308.0
+text = "The average of the four 
+numbers is"
+label_settings = SubResource("LabelSettings_g6exr")
+vertical_alignment = 1
+
+[node name="TxtNum1" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 155.0
+offset_right = 225.0
+offset_bottom = 211.0
+
+[node name="TxtNum2" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 227.0
+offset_right = 227.0
+offset_bottom = 283.0
+
+[node name="TxtNum3" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 304.0
+offset_right = 230.0
+offset_bottom = 360.0
+
+[node name="TxtNum4" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 381.0
+offset_right = 233.0
+offset_bottom = 437.0
+
+[node name="BtnCalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 498.0
+offset_right = 408.0
+offset_bottom = 610.0
+
+[node name="BtnClear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 500.0
+offset_right = 752.0
+offset_bottom = 612.0
+
+[node name="BtnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 791.0
+offset_top = 498.0
+offset_right = 1086.0
+offset_bottom = 610.0
