@@ -1,0 +1,99 @@
+[gd_scene load_steps=4 format=3 uid="uid://dibmccb8bec4f"]
+
+[ext_resource type="Script" path="res://prog_54c.gd" id="1_pjkh6"]
+[ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Big_Font.tres" id="2_05nms"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mpf1d"]
+font_size = 38
+
+[node name="Prog_54c" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pjkh6")
+
+[node name="LblRad" type="Label" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 376.0
+offset_bottom = 150.0
+text = "Radius:"
+label_settings = SubResource("LabelSettings_mpf1d")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LblRad2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 124.0
+offset_right = 379.0
+offset_bottom = 272.0
+text = "Area:"
+label_settings = SubResource("LabelSettings_mpf1d")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LblRad3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 266.0
+offset_right = 382.0
+offset_bottom = 414.0
+text = "Circumference:"
+label_settings = SubResource("LabelSettings_mpf1d")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BtnCalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 502.0
+offset_right = 276.0
+offset_bottom = 621.0
+theme = ExtResource("2_05nms")
+text = "Calculate"
+
+[node name="BtnClear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 379.0
+offset_top = 502.0
+offset_right = 625.0
+offset_bottom = 621.0
+theme = ExtResource("2_05nms")
+text = "Clear"
+
+[node name="BtnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 704.0
+offset_top = 500.0
+offset_right = 950.0
+offset_bottom = 619.0
+theme = ExtResource("2_05nms")
+text = "Exit"
+
+[node name="TxtRad" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 44.0
+offset_right = 548.0
+offset_bottom = 115.0
+
+[node name="LblArea" type="Label" parent="."]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 164.0
+offset_right = 550.0
+offset_bottom = 245.0
+
+[node name="LblCir" type="Label" parent="."]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 302.0
+offset_right = 550.0
+offset_bottom = 383.0
+
+[connection signal="pressed" from="BtnCalc" to="." method="_on_btn_calc_pressed"]
