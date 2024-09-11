@@ -1,4 +1,10 @@
-[gd_scene format=3 uid="uid://byghsmphym7gs"]
+[gd_scene load_steps=4 format=3 uid="uid://byghsmphym7gs"]
+
+[ext_resource type="Script" path="res://LangDocs/prog_93a.gd" id="1_obfno"]
+[ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Big_Font.tres" id="2_82sre"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_teakg"]
+font_size = 38
 
 [node name="Prog93a" type="Control"]
 layout_mode = 3
@@ -7,3 +13,96 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_obfno")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 46.0
+offset_right = 336.0
+offset_bottom = 153.0
+text = "Enter KWH used: "
+label_settings = SubResource("LabelSettings_teakg")
+
+[node name="LblBase" type="Label" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 132.0
+offset_right = 328.0
+offset_bottom = 239.0
+text = "Base Rate:"
+label_settings = SubResource("LabelSettings_teakg")
+
+[node name="LblSur" type="Label" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 230.0
+offset_right = 328.0
+offset_bottom = 337.0
+text = "Surcharge:"
+label_settings = SubResource("LabelSettings_teakg")
+
+[node name="LblCity" type="Label" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 340.0
+offset_right = 322.0
+offset_bottom = 447.0
+text = "City Tax:"
+label_settings = SubResource("LabelSettings_teakg")
+
+[node name="LblPay" type="Label" parent="."]
+layout_mode = 0
+offset_left = 794.0
+offset_top = 62.0
+offset_right = 1110.0
+offset_bottom = 169.0
+text = "Pay:"
+label_settings = SubResource("LabelSettings_teakg")
+
+[node name="LblPayAfter" type="Label" parent="."]
+layout_mode = 0
+offset_left = 514.0
+offset_top = 170.0
+offset_right = 872.0
+offset_bottom = 277.0
+text = "After May 20th Pay:"
+label_settings = SubResource("LabelSettings_teakg")
+
+[node name="TxtKWH" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 332.0
+offset_top = 52.0
+offset_right = 423.0
+offset_bottom = 103.0
+
+[node name="BtnCalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 464.0
+offset_right = 315.0
+offset_bottom = 634.0
+theme = ExtResource("2_82sre")
+text = "Calculate"
+
+[node name="BtnClear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 386.0
+offset_top = 464.0
+offset_right = 672.0
+offset_bottom = 636.0
+theme = ExtResource("2_82sre")
+text = "Clear"
+
+[node name="BtnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 734.0
+offset_top = 468.0
+offset_right = 1046.0
+offset_bottom = 636.0
+theme = ExtResource("2_82sre")
+text = "Exit"
+
+[connection signal="pressed" from="BtnCalc" to="." method="_on_btn_calc_pressed"]
+[connection signal="pressed" from="BtnClear" to="." method="_on_btn_clear_pressed"]
+[connection signal="pressed" from="BtnExit" to="." method="_on_btn_exit_pressed"]
