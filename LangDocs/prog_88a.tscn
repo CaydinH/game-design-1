@@ -1,0 +1,171 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkpstn4esqns3"]
+
+[ext_resource type="Script" path="res://prog_88a.gd" id="1_51uoc"]
+[ext_resource type="LabelSettings" uid="uid://bbdv5q0yw2mmr" path="res://Medium_Font.tres" id="2_ocyul"]
+[ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Big_Font.tres" id="3_rt56q"]
+
+[node name="Prog_88a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_51uoc")
+
+[node name="LblNum1" type="Label" parent="."]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 46.0
+offset_right = 435.0
+offset_bottom = 99.0
+text = "Enter Number 1:"
+label_settings = ExtResource("2_ocyul")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LblNum2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 47.0
+offset_right = 927.0
+offset_bottom = 100.0
+text = "Enter Number 2:"
+label_settings = ExtResource("2_ocyul")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LblOgNums" type="Label" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 89.0
+offset_right = 494.0
+offset_bottom = 198.0
+text = "The Original Numbers Are:"
+label_settings = ExtResource("2_ocyul")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LblSum" type="Label" parent="."]
+layout_mode = 0
+offset_left = 361.0
+offset_top = 191.0
+offset_right = 493.0
+offset_bottom = 244.0
+text = "Sum:"
+label_settings = ExtResource("2_ocyul")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LblDiff" type="Label" parent="."]
+layout_mode = 0
+offset_left = 301.0
+offset_top = 254.0
+offset_right = 503.0
+offset_bottom = 307.0
+text = "Difference:"
+label_settings = ExtResource("2_ocyul")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LblProduct" type="Label" parent="."]
+layout_mode = 0
+offset_left = 773.0
+offset_top = 130.0
+offset_right = 928.0
+offset_bottom = 183.0
+text = "Product:"
+label_settings = ExtResource("2_ocyul")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LblAverage" type="Label" parent="."]
+layout_mode = 0
+offset_left = 767.0
+offset_top = 193.0
+offset_right = 926.0
+offset_bottom = 246.0
+text = "Average:"
+label_settings = ExtResource("2_ocyul")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LblAV" type="Label" parent="."]
+layout_mode = 0
+offset_left = 641.0
+offset_top = 261.0
+offset_right = 926.0
+offset_bottom = 314.0
+text = "Absolute Value:"
+label_settings = ExtResource("2_ocyul")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LblMax" type="Label" parent="."]
+layout_mode = 0
+offset_left = 729.0
+offset_top = 317.0
+offset_right = 925.0
+offset_bottom = 370.0
+text = "Maximum:"
+label_settings = ExtResource("2_ocyul")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LblMin" type="Label" parent="."]
+layout_mode = 0
+offset_left = 308.0
+offset_top = 312.0
+offset_right = 504.0
+offset_bottom = 365.0
+text = "Minimum:"
+label_settings = ExtResource("2_ocyul")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TxtNum1" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 445.0
+offset_top = 51.0
+offset_right = 552.0
+offset_bottom = 101.0
+
+[node name="TxtNum2" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 949.0
+offset_top = 51.0
+offset_right = 1056.0
+offset_bottom = 101.0
+
+[node name="BtnCalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 462.0
+offset_right = 347.0
+offset_bottom = 589.0
+theme = ExtResource("3_rt56q")
+text = "Calculate"
+
+[node name="BtnClear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 394.0
+offset_top = 464.0
+offset_right = 705.0
+offset_bottom = 591.0
+theme = ExtResource("3_rt56q")
+text = "Clear"
+
+[node name="BtnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 776.0
+offset_top = 469.0
+offset_right = 1087.0
+offset_bottom = 596.0
+theme = ExtResource("3_rt56q")
+text = "Exit"
+
+[connection signal="pressed" from="BtnCalc" to="." method="_on_btn_calc_pressed"]
+[connection signal="pressed" from="BtnClear" to="." method="_on_btn_clear_pressed"]
+[connection signal="pressed" from="BtnExit" to="." method="_on_btn_exit_pressed"]
