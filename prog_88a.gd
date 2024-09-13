@@ -26,6 +26,7 @@ func _on_btn_calc_pressed() -> void:
 	$LblAverage.text = "Average: " + str(avg)
 	$LblAV.text = "Absolute Value: " + str(AV)
 	$LblMax.text = "Maximum: " + str(Max)
+	$LblMin.text = "Minimum: " + str(Min)
 	
 
 
