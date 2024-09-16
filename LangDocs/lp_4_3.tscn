@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkaghvl6l43gu"]
+
+[ext_resource type="Script" path="res://LangDocs/lp_4_3.gd" id="1_akx7a"]
+[ext_resource type="LabelSettings" uid="uid://bbdv5q0yw2mmr" path="res://Medium_Font.tres" id="2_mmqgo"]
+[ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Big_Font.tres" id="3_iveih"]
+
+[node name="Lp_4-3" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_akx7a")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 68.0
+offset_right = 550.0
+offset_bottom = 149.0
+text = "Enter # of eggs purchased:"
+label_settings = ExtResource("2_mmqgo")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 149.0
+offset_right = 601.0
+offset_bottom = 230.0
+text = "Total cost is:"
+label_settings = ExtResource("2_mmqgo")
+horizontal_alignment = 2
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 627.0
+offset_top = 63.0
+offset_right = 732.0
+offset_bottom = 124.0
+
+[node name="BtnCalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 445.0
+offset_right = 336.0
+offset_bottom = 610.0
+theme = ExtResource("3_iveih")
+text = "Calculate"
+
+[node name="BtnClear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 448.0
+offset_right = 698.0
+offset_bottom = 613.0
+theme = ExtResource("3_iveih")
+text = "Clear"
+
+[node name="BtnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 778.0
+offset_top = 453.0
+offset_right = 1084.0
+offset_bottom = 618.0
+theme = ExtResource("3_iveih")
+text = "Exit"
+
+[connection signal="pressed" from="BtnCalc" to="." method="_on_btn_calc_pressed"]
+[connection signal="pressed" from="BtnClear" to="." method="_on_btn_clear_pressed"]
+[connection signal="pressed" from="BtnExit" to="." method="_on_btn_exit_pressed"]
