@@ -5,11 +5,8 @@ extends Control
 func _on_btn_calc_pressed() -> void:
 	var egg = int($LineEdit.text)
 	var dozen = floor(egg/12)
-	var eeggs = egg % 12
+	var eggsRemain = egg % 12
 	var price = 1.0
-	var PriceDoz = price*dozen
-	var PriceEgg = eeggs * (1/12*price)
-	var PriceTot = PriceDoz+PriceEgg
 	
 	if dozen > 0 and dozen <=3:
 		price = 0.50
@@ -20,10 +17,11 @@ func _on_btn_calc_pressed() -> void:
 	else:
 		price = 0.35
 		return
-	$Label2.text = "Total cost is: $" + str(PriceTot)
 		
-	#if size > 100000 and weight > 27:
-		#$LblOut.text = "Too Heavy and Too Large"
+	var PriceDoz = price*dozen
+	var PriceEgg = (eggsRemain * PriceDoz/ 12.0)
+	var PriceTot = PriceDoz+PriceEgg
+	$Label2.text = "Total cost is: $ " + str(PriceTot)
 
 
 func _on_btn_clear_pressed() -> void:
