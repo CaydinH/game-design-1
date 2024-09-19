@@ -4,7 +4,7 @@ extends Control
 
 func _on_btn_calc_pressed() -> void:
 	var egg = int($LineEdit.text)
-	var dozen = floor(egg/12)
+	var dozen = floor(egg/12.0)
 	var eggsRemain = egg % 12
 	var price = 1.0
 	
@@ -14,14 +14,16 @@ func _on_btn_calc_pressed() -> void:
 		price = 0.45
 	elif dozen >= 6 and dozen <= 10:
 		price = 0.40
-	else:
+	elif dozen > 11:
 		price = 0.35
+	else:
+		$Label2.text = "Total cost is: No eggs for you"
 		return
 		
 	var PriceDoz = price*dozen
 	var PriceEgg = (eggsRemain * PriceDoz/ 12.0)
 	var PriceTot = PriceDoz+PriceEgg
-	$Label2.text = "Total cost is: $ " + str(PriceTot)
+	$Label2.text = "Total cost is: $%.2f" % PriceTot
 
 
 func _on_btn_clear_pressed() -> void:
