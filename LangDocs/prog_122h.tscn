@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://dwevykkcq2lei"]
+[gd_scene load_steps=3 format=3 uid="uid://dwevykkcq2lei"]
+
+[ext_resource type="Script" path="res://LangDocs/prog_122h.gd" id="1_8nngx"]
+[ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Big_Font.tres" id="2_y2ayx"]
 
 [node name="prog122h" type="Control"]
 layout_mode = 3
@@ -7,8 +10,41 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8nngx")
 
 [node name="ItemList" type="ItemList" parent="."]
 layout_mode = 0
-offset_right = 1146.0
-offset_bottom = 440.0
+offset_left = 2.0
+offset_right = 1150.0
+offset_bottom = 468.0
+
+[node name="BtnCalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 484.0
+offset_right = 322.0
+offset_bottom = 636.0
+theme = ExtResource("2_y2ayx")
+text = "Calculate"
+
+[node name="BtnClear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 484.0
+offset_right = 736.0
+offset_bottom = 636.0
+theme = ExtResource("2_y2ayx")
+text = "Clear"
+
+[node name="BtnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 828.0
+offset_top = 484.0
+offset_right = 1140.0
+offset_bottom = 636.0
+theme = ExtResource("2_y2ayx")
+text = "Exit"
+
+[connection signal="pressed" from="BtnCalc" to="." method="_on_btn_calc_pressed"]
+[connection signal="pressed" from="BtnClear" to="." method="_on_btn_clear_pressed"]
+[connection signal="pressed" from="BtnExit" to="." method="_on_btn_exit_pressed"]
