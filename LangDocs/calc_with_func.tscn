@@ -1,0 +1,83 @@
+[gd_scene load_steps=2 format=3 uid="uid://5ivppt8f7n3j"]
+
+[ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Big_Font.tres" id="1_dusbb"]
+
+[node name="CalcWithFunc" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 970.0
+offset_top = 10.0
+offset_right = 1142.0
+offset_bottom = 116.0
+theme = ExtResource("1_dusbb")
+text = "*"
+
+[node name="Button5" type="Button" parent="."]
+layout_mode = 0
+offset_left = 778.0
+offset_top = 10.0
+offset_right = 950.0
+offset_bottom = 116.0
+theme = ExtResource("1_dusbb")
+text = "-"
+
+[node name="Button6" type="Button" parent="."]
+layout_mode = 0
+offset_left = 586.0
+offset_top = 10.0
+offset_right = 758.0
+offset_bottom = 116.0
+theme = ExtResource("1_dusbb")
+text = "+"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 970.0
+offset_top = 146.0
+offset_right = 1142.0
+offset_bottom = 252.0
+theme = ExtResource("1_dusbb")
+text = "MOD"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 778.0
+offset_top = 146.0
+offset_right = 950.0
+offset_bottom = 252.0
+theme = ExtResource("1_dusbb")
+text = "/"
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 586.0
+offset_top = 146.0
+offset_right = 758.0
+offset_bottom = 252.0
+theme = ExtResource("1_dusbb")
+text = "**"
+
+[node name="Button7" type="Button" parent="."]
+layout_mode = 0
+offset_left = 713.0
+offset_top = 471.0
+offset_right = 1020.0
+offset_bottom = 540.0
+theme = ExtResource("1_dusbb")
+text = "Exit"
+
+[node name="Button8" type="Button" parent="."]
+layout_mode = 0
+offset_left = 713.0
+offset_top = 367.0
+offset_right = 1020.0
+offset_bottom = 436.0
+theme = ExtResource("1_dusbb")
+text = "Clear"

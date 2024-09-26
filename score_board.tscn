@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://k4urggheq5h0"]
+
+[ext_resource type="Script" path="res://score_board.gd" id="1_qpa3b"]
+[ext_resource type="LabelSettings" uid="uid://bbdv5q0yw2mmr" path="res://Medium_Font.tres" id="2_sv51f"]
+[ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Big_Font.tres" id="3_6t178"]
+
+[node name="ScoreBoard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qpa3b")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 15.0
+offset_right = 439.0
+offset_bottom = 68.0
+text = "Modify points (add/sub):"
+label_settings = ExtResource("2_sv51f")
+
+[node name="LblOut" type="Label" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 84.0
+offset_right = 441.0
+offset_bottom = 137.0
+text = "Score 0"
+label_settings = ExtResource("2_sv51f")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 451.0
+offset_top = 5.0
+offset_right = 819.0
+offset_bottom = 80.0
+
+[node name="BtnUpdate" type="Button" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 479.0
+offset_right = 370.0
+offset_bottom = 635.0
+theme = ExtResource("3_6t178")
+text = "Update"
+
+[node name="BtnReset" type="Button" parent="."]
+layout_mode = 0
+offset_left = 787.0
+offset_top = 479.0
+offset_right = 1146.0
+offset_bottom = 635.0
+theme = ExtResource("3_6t178")
+text = "Reset"
+
+[connection signal="pressed" from="BtnUpdate" to="." method="_on_btn_update_pressed"]
+[connection signal="pressed" from="BtnReset" to="." method="_on_btn_reset_pressed"]

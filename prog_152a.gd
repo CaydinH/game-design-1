@@ -9,7 +9,6 @@ func _on_btn_calc_pressed() -> void:
 		mySum += lcv
 		$ItemList.add_item(str(mySum))
 		lcv += 3
-	#for lcv in range(3, 9670, 3):
 
 
 func _on_btn_clear_pressed() -> void:
