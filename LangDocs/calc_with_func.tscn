@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://5ivppt8f7n3j"]
+[gd_scene load_steps=3 format=3 uid="uid://5ivppt8f7n3j"]
 
+[ext_resource type="Script" path="res://LangDocs/calc_with_func.gd" id="1_60gqh"]
 [ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Big_Font.tres" id="1_dusbb"]
 
 [node name="CalcWithFunc" type="Control"]
@@ -9,8 +10,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_60gqh")
 
-[node name="Button" type="Button" parent="."]
+[node name="BthMult" type="Button" parent="."]
 layout_mode = 0
 offset_left = 970.0
 offset_top = 10.0
@@ -19,7 +21,7 @@ offset_bottom = 116.0
 theme = ExtResource("1_dusbb")
 text = "*"
 
-[node name="Button5" type="Button" parent="."]
+[node name="BtnSub" type="Button" parent="."]
 layout_mode = 0
 offset_left = 778.0
 offset_top = 10.0
@@ -28,7 +30,7 @@ offset_bottom = 116.0
 theme = ExtResource("1_dusbb")
 text = "-"
 
-[node name="Button6" type="Button" parent="."]
+[node name="BtnAdd" type="Button" parent="."]
 layout_mode = 0
 offset_left = 586.0
 offset_top = 10.0
@@ -37,7 +39,7 @@ offset_bottom = 116.0
 theme = ExtResource("1_dusbb")
 text = "+"
 
-[node name="Button2" type="Button" parent="."]
+[node name="BtnMOD" type="Button" parent="."]
 layout_mode = 0
 offset_left = 970.0
 offset_top = 146.0
@@ -46,7 +48,7 @@ offset_bottom = 252.0
 theme = ExtResource("1_dusbb")
 text = "MOD"
 
-[node name="Button3" type="Button" parent="."]
+[node name="BtnDiv" type="Button" parent="."]
 layout_mode = 0
 offset_left = 778.0
 offset_top = 146.0
@@ -55,7 +57,7 @@ offset_bottom = 252.0
 theme = ExtResource("1_dusbb")
 text = "/"
 
-[node name="Button4" type="Button" parent="."]
+[node name="BtnSqr" type="Button" parent="."]
 layout_mode = 0
 offset_left = 586.0
 offset_top = 146.0
@@ -64,7 +66,7 @@ offset_bottom = 252.0
 theme = ExtResource("1_dusbb")
 text = "**"
 
-[node name="Button7" type="Button" parent="."]
+[node name="BtnExit" type="Button" parent="."]
 layout_mode = 0
 offset_left = 713.0
 offset_top = 471.0
@@ -73,7 +75,7 @@ offset_bottom = 540.0
 theme = ExtResource("1_dusbb")
 text = "Exit"
 
-[node name="Button8" type="Button" parent="."]
+[node name="BtnClear" type="Button" parent="."]
 layout_mode = 0
 offset_left = 713.0
 offset_top = 367.0
