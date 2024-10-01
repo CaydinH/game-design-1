@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4nej08h3rqca"]
+
+[ext_resource type="Script" path="res://plt_world_1.gd" id="1_61idx"]
+[ext_resource type="PackedScene" uid="uid://cnp4vnveckumw" path="res://plt_player.tscn" id="2_faysy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljj7k"]
+size = Vector2(149, 18)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_b1lfa"]
+
+[node name="Plt_World1" type="Node2D"]
+script = ExtResource("1_61idx")
+
+[node name="Plt_Player" parent="." instance=ExtResource("2_faysy")]
+position = Vector2(433, 364)
+
+[node name="World" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World"]
+position = Vector2(73, -31)
+scale = Vector2(1.18602, 0.990063)
+polygon = PackedVector2Array(9, 476, 106, 473, 169, 473, 210, 470, 257, 487, 289, 501, 400, 496, 636.585, 488.858, 590.386, 617.466, 628.154, 620.162, 628.154, 655.514, 778, 655, 802, 483, 889, 456, 1032, 430, 1128, 433, 1205, 493, 1339, 527, 1359, 496, 1432, 425, 1515, 382, 1605, 413, 1687, 413, 1774, 377, 1794.24, 333.312, 1834, 74, 1882, 66, 1897.95, 799.949, -102.865, 821.16, -92, 97, -16, 102)
+
+[node name="Polygon2D" type="Polygon2D" parent="World/CollisionPolygon2D"]
+scale = Vector2(0.984411, 1.00521)
+
+[node name="Start_Platform" type="StaticBody2D" parent="."]
+position = Vector2(427, 400)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start_Platform"]
+position = Vector2(2, -6)
+shape = SubResource("RectangleShape2D_ljj7k")
+
+[node name="Sprite2D" type="Sprite2D" parent="Start_Platform/CollisionShape2D"]
+position = Vector2(-1.00001, -9.0003e-06)
+scale = Vector2(146, 17)
+texture = SubResource("PlaceholderTexture2D_b1lfa")
+
+[node name="Start_Platform2" type="StaticBody2D" parent="."]
+position = Vector2(427, 400)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start_Platform2"]
+position = Vector2(497, 8)
+shape = SubResource("RectangleShape2D_ljj7k")
+
+[node name="Sprite2D" type="Sprite2D" parent="Start_Platform2/CollisionShape2D"]
+scale = Vector2(146, 17)
+texture = SubResource("PlaceholderTexture2D_b1lfa")
