@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://c05ekh0vwsca6"]
+
+[ext_resource type="Script" path="res://dragable.gd" id="1_u704b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_688u2"]
+size = Vector2(28, 28)
+
+[node name="Dragable" type="RigidBody2D"]
+freeze = true
+script = ExtResource("1_u704b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_688u2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -14.0
+offset_top = -14.0
+offset_right = 14.0
+offset_bottom = 14.0
+color = Color(0, 0.979227, 0.887421, 1)
+
+[node name="Button" type="Button" parent="ColorRect"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 30.0
+offset_bottom = 30.0
+focus_mode = 0
+
+[connection signal="button_down" from="ColorRect/Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="ColorRect/Button" to="." method="_on_button_button_up"]

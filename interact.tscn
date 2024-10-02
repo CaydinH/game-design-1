@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0gifurb0y7aa"]
+
+[ext_resource type="Script" path="res://interact.gd" id="1_y1cvg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_axkwe"]
+size = Vector2(140, 136)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_p0eco"]
+
+[node name="Interact" type="RigidBody2D"]
+input_pickable = true
+freeze = true
+script = ExtResource("1_y1cvg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(70, 69)
+shape = SubResource("RectangleShape2D_axkwe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(71, 69)
+scale = Vector2(141.5, 136)
+texture = SubResource("PlaceholderTexture2D_p0eco")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

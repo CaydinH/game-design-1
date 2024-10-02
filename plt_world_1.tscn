@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4nej08h3rqca"]
+[gd_scene load_steps=7 format=3 uid="uid://d4nej08h3rqca"]
 
 [ext_resource type="Script" path="res://plt_world_1.gd" id="1_61idx"]
 [ext_resource type="PackedScene" uid="uid://cnp4vnveckumw" path="res://plt_player.tscn" id="2_faysy"]
+[ext_resource type="PackedScene" uid="uid://d0gifurb0y7aa" path="res://interact.tscn" id="3_80sag"]
+[ext_resource type="PackedScene" uid="uid://c05ekh0vwsca6" path="res://dragable.tscn" id="4_t4cyy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljj7k"]
 size = Vector2(149, 18)
@@ -19,7 +21,7 @@ position = Vector2(433, 364)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World"]
 position = Vector2(73, -31)
 scale = Vector2(1.18602, 0.990063)
-polygon = PackedVector2Array(9, 476, 106, 473, 169, 473, 210, 470, 257, 487, 289, 501, 400, 496, 636.585, 488.858, 590.386, 617.466, 628.154, 620.162, 628.154, 655.514, 778, 655, 802, 483, 889, 456, 1032, 430, 1128, 433, 1205, 493, 1339, 527, 1359, 496, 1432, 425, 1515, 382, 1605, 413, 1687, 413, 1774, 377, 1794.24, 333.312, 1834, 74, 1882, 66, 1897.95, 799.949, -102.865, 821.16, -92, 97, -16, 102)
+polygon = PackedVector2Array(9, 476, 106, 473, 169, 473, 210, 470, 257, 487, 289, 501, 400, 496, 636.585, 488.858, 590.386, 617.466, 628.154, 620.162, 628.154, 655.514, 778, 655, 816.175, 576.731, 873.51, 516.129, 951.08, 479.767, 1042.14, 473.707, 1129.83, 477.747, 1205, 493, 1296.77, 501.988, 1359, 496, 1432, 425, 1517.68, 409.065, 1605, 413, 1687, 413, 1774, 377, 1794.24, 333.312, 1834, 74, 1882, 66, 1897.95, 799.949, -102.865, 821.16, -92, 97, -16, 102)
 
 [node name="Polygon2D" type="Polygon2D" parent="World/CollisionPolygon2D"]
 scale = Vector2(0.984411, 1.00521)
@@ -46,3 +48,9 @@ shape = SubResource("RectangleShape2D_ljj7k")
 [node name="Sprite2D" type="Sprite2D" parent="Start_Platform2/CollisionShape2D"]
 scale = Vector2(146, 17)
 texture = SubResource("PlaceholderTexture2D_b1lfa")
+
+[node name="Interact" parent="." instance=ExtResource("3_80sag")]
+position = Vector2(658, 342)
+
+[node name="Dragable" parent="." instance=ExtResource("4_t4cyy")]
+position = Vector2(1308, 416)
