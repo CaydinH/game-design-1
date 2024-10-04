@@ -126,7 +126,7 @@ offset_left = 111.0
 offset_top = 525.0
 offset_right = 238.0
 offset_bottom = 586.0
-text = "Result:"
+text = "Result: "
 label_settings = ExtResource("3_ibhih")
 
 [node name="TxtNum1" type="LineEdit" parent="."]
@@ -145,3 +145,9 @@ offset_bottom = 448.0
 
 [connection signal="pressed" from="BthMult" to="." method="_on_bth_mult_pressed"]
 [connection signal="pressed" from="BtnSub" to="." method="_on_btn_sub_pressed"]
+[connection signal="pressed" from="BtnAdd" to="." method="_on_btn_add_pressed"]
+[connection signal="pressed" from="BtnMOD" to="." method="_on_btn_mod_pressed"]
+[connection signal="pressed" from="BtnDiv" to="." method="_on_btn_div_pressed"]
+[connection signal="pressed" from="BtnSqr" to="." method="_on_btn_sqr_pressed"]
+[connection signal="pressed" from="BtnExit" to="." method="_on_btn_exit_pressed"]
+[connection signal="pressed" from="BtnClear" to="." method="_on_btn_clear_pressed"]

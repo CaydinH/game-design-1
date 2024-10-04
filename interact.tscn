@@ -21,4 +21,10 @@ position = Vector2(71, 69)
 scale = Vector2(141.5, 136)
 texture = SubResource("PlaceholderTexture2D_p0eco")
 
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_right = 143.0
+offset_bottom = 138.0
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
