@@ -1,15 +1,31 @@
-[gd_scene load_steps=8 format=3 uid="uid://d4nej08h3rqca"]
+[gd_scene load_steps=11 format=3 uid="uid://d4nej08h3rqca"]
 
 [ext_resource type="Script" path="res://plt_world_1.gd" id="1_61idx"]
 [ext_resource type="PackedScene" uid="uid://cnp4vnveckumw" path="res://plt_player.tscn" id="2_faysy"]
+[ext_resource type="Texture2D" uid="uid://4lblg4aq3aii" path="res://Assets/Sprites/sheet.png" id="3_1hfcr"]
 [ext_resource type="PackedScene" uid="uid://d0gifurb0y7aa" path="res://interact.tscn" id="3_80sag"]
 [ext_resource type="PackedScene" uid="uid://c05ekh0vwsca6" path="res://dragable.tscn" id="4_t4cyy"]
 [ext_resource type="PackedScene" uid="uid://6a284l16n1qb" path="res://plt_enemy.tscn" id="5_vof16"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljj7k"]
-size = Vector2(149, 18)
+size = Vector2(106, 22)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_b1lfa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phhbh"]
+atlas = ExtResource("3_1hfcr")
+region = Rect2(114, 0, 38, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_onc01"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phhbh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Plt_World1" type="Node2D"]
 script = ExtResource("1_61idx")
@@ -31,13 +47,17 @@ scale = Vector2(0.984411, 1.00521)
 position = Vector2(427, 400)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Start_Platform"]
-position = Vector2(2, -6)
 shape = SubResource("RectangleShape2D_ljj7k")
 
 [node name="Sprite2D" type="Sprite2D" parent="Start_Platform/CollisionShape2D"]
+visible = false
 position = Vector2(-1.00001, -9.0003e-06)
 scale = Vector2(146, 17)
 texture = SubResource("PlaceholderTexture2D_b1lfa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Start_Platform"]
+scale = Vector2(2.78947, 2.2)
+sprite_frames = SubResource("SpriteFrames_onc01")
 
 [node name="Start_Platform2" type="StaticBody2D" parent="."]
 position = Vector2(427, 400)
