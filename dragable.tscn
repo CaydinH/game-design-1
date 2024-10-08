@@ -1,9 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://c05ekh0vwsca6"]
+[gd_scene load_steps=6 format=3 uid="uid://c05ekh0vwsca6"]
 
 [ext_resource type="Script" path="res://dragable.gd" id="1_u704b"]
+[ext_resource type="Texture2D" uid="uid://4lblg4aq3aii" path="res://Assets/Sprites/sheet.png" id="2_0aqk7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_688u2"]
 size = Vector2(28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jm81p"]
+atlas = ExtResource("2_0aqk7")
+region = Rect2(255, 98, 17, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kbkm5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jm81p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Dragable" type="RigidBody2D"]
 freeze = true
@@ -13,6 +29,7 @@ script = ExtResource("1_u704b")
 shape = SubResource("RectangleShape2D_688u2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
 offset_left = -14.0
 offset_top = -14.0
 offset_right = 14.0
@@ -27,6 +44,11 @@ offset_top = -2.0
 offset_right = 30.0
 offset_bottom = 30.0
 focus_mode = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -6)
+scale = Vector2(2.47059, 2.85714)
+sprite_frames = SubResource("SpriteFrames_kbkm5")
 
 [connection signal="button_down" from="ColorRect/Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="ColorRect/Button" to="." method="_on_button_button_up"]
