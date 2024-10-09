@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://4lblg4aq3aii" path="res://Assets/Sprites/sheet.png" id="2_0aqk7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_688u2"]
-size = Vector2(28, 28)
+size = Vector2(34, 35)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jm81p"]
 atlas = ExtResource("2_0aqk7")
@@ -22,10 +22,10 @@ animations = [{
 }]
 
 [node name="Dragable" type="RigidBody2D"]
-freeze = true
 script = ExtResource("1_u704b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1.5)
 shape = SubResource("RectangleShape2D_688u2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -50,5 +50,6 @@ position = Vector2(1, -6)
 scale = Vector2(2.47059, 2.85714)
 sprite_frames = SubResource("SpriteFrames_kbkm5")
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="button_down" from="ColorRect/Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="ColorRect/Button" to="." method="_on_button_button_up"]

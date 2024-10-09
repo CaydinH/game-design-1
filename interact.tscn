@@ -10,6 +10,7 @@ size = Vector2(140, 136)
 [node name="Interact" type="RigidBody2D"]
 input_pickable = true
 freeze = true
+freeze_mode = 1
 script = ExtResource("1_y1cvg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -87,7 +87,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Plt_Player" type="CharacterBody2D"]
+[node name="Plt_Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_7ef12")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
