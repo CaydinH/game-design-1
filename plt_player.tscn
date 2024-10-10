@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://cnp4vnveckumw"]
+[gd_scene load_steps=16 format=3 uid="uid://cnp4vnveckumw"]
 
 [ext_resource type="Script" path="res://plt_player.gd" id="1_7ef12"]
 [ext_resource type="Texture2D" uid="uid://dtqmlv8k153yd" path="res://icon.svg" id="2_7wsf3"]
 [ext_resource type="Texture2D" uid="uid://bx1lx7olb6x2w" path="res://Assets/Sprites/characters.png" id="3_7fmbp"]
+[ext_resource type="PackedScene" uid="uid://ckrl83ktlqwhs" path="res://pause_menu.tscn" id="4_vifqt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fg5yi"]
 
@@ -98,10 +99,15 @@ texture = ExtResource("2_7wsf3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_fg5yi")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3.25, 3.25)
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5hwr8")
 animation = &"Jump"
 frame_progress = 0.820406
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3.25, 3.25)
+
+[node name="pause_menu" parent="Camera2D" instance=ExtResource("4_vifqt")]
+visible = false
+z_index = 1
+scale = Vector2(0.25, 0.25)

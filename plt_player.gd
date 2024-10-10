@@ -44,11 +44,14 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_text_delete"):
 		self.position.y -= JUMP_VELOCITY / 2.0
 	if Input.is_action_just_pressed("zoom_cam_in"):
-		$Camera2D.zoom += Vector2(1, 1)
+		$Camera2D.zoom += Vector2(1,1)
 	if Input.is_action_just_pressed("zoom_cam_out"):
-		$Camera2D.zoom -= Vector2(1, 1)
+		$Camera2D.zoom -= Vector2(1,1)
 	if Input.is_action_just_pressed("Open_menu"):
 		get_tree().change_scene_to_file("res://plt_main_menu.tscn")
+	if Input.is_action_just_pressed("pause"):
+		$Camera2D/pause_menu.show()
+		get_tree().paused = true
 
 	move_and_slide()
 
