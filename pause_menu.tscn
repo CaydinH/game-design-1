@@ -45,5 +45,11 @@ layout_mode = 2
 theme = ExtResource("2_68f7i")
 text = "Quit"
 
+[node name="Restart" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_68f7i")
+text = "Restart Level"
+
 [connection signal="pressed" from="Panel/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
