@@ -17,7 +17,6 @@ func _on_button_button_up() -> void:
 	dragging = false
 	freeze = false
 
-
-func _on_body_entered(body: Node) -> void:
-	if body.name == "Plt_Player":
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemy"):
 		body.queue_free()

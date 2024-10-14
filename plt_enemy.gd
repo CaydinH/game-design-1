@@ -13,12 +13,6 @@ func _physics_process(delta: float) -> void:
 func _on_timer_timeout() -> void:
 	direction *= -1
 	update_animation(direction)
-
-func _on_body_entered(body: Node) -> void:
-	if body.name == "Plt_Player":
-		body.queue_free()
-		OS.alert("You died!?")
-		get_tree().reload_current_scene()
 		
 @onready var anim = $AnimatedSprite2D
 func update_animation(direction):
@@ -27,3 +21,9 @@ func update_animation(direction):
 		anim.flip_h = direction <0 # Flip sprite if moving left
 	else:
 		anim.play("default")
+		
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.name == "Plt_Player":
+		body.queue_free()
+		OS.alert("You died!?")
+		get_tree().reload_current_scene()

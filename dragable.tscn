@@ -1,10 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c05ekh0vwsca6"]
+[gd_scene load_steps=5 format=3 uid="uid://c05ekh0vwsca6"]
 
 [ext_resource type="Script" path="res://dragable.gd" id="1_u704b"]
 [ext_resource type="Texture2D" uid="uid://4lblg4aq3aii" path="res://Assets/Sprites/sheet.png" id="2_0aqk7"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_688u2"]
-size = Vector2(34, 35)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jm81p"]
 atlas = ExtResource("2_0aqk7")
@@ -24,9 +21,9 @@ animations = [{
 [node name="Dragable" type="RigidBody2D"]
 script = ExtResource("1_u704b")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(1, 1.5)
-shape = SubResource("RectangleShape2D_688u2")
+polygon = PackedVector2Array(-1, -13.5, -9, -7.5, -14, -1.5, -16, 6.5, -16, 12.5, 13, 12.5, 16, 9.5, 16, 1.5, 9, -12.5)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -50,6 +47,12 @@ position = Vector2(1, -6)
 scale = Vector2(2.47059, 2.85714)
 sprite_frames = SubResource("SpriteFrames_kbkm5")
 
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AnimatedSprite2D/Area2D"]
+polygon = PackedVector2Array(0.809523, -3.5, -2.02381, -2.45, -6.47619, 1.05, -7.69047, 7.00001, -7.28571, 7.70001, 5.66666, 7.70001, 7.28571, 6.65001, 7.28571, 1.05, 3.23809, -3.5)
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="button_down" from="ColorRect/Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="ColorRect/Button" to="." method="_on_button_button_up"]
+[connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="." method="_on_area_2d_body_entered"]

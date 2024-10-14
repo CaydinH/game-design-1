@@ -45,7 +45,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Plt_Enemy" type="RigidBody2D"]
+[node name="Plt_Enemy" type="RigidBody2D" groups=["enemy"]]
 lock_rotation = true
 contact_monitor = true
 max_contacts_reported = 1
@@ -66,8 +66,14 @@ sprite_frames = SubResource("SpriteFrames_ccwn5")
 animation = &"move"
 frame_progress = 0.484109
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(8, -8, -2, -8, -4, -2, -6, -2, -9, 1, -9, 8, 5, 8, 7, 3, 10, -4)
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-3, -1, -6, -1, -8, 1, -8, 5, -9, 6, -8, 7, 4, 7, 6, 5, 6, 1, 8, 0, 8, -3, 9, -4, 7, -7, -1, -7, -2, -5)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
