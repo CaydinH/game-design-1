@@ -19,6 +19,7 @@ animations = [{
 }]
 
 [node name="Dragable" type="RigidBody2D"]
+freeze_mode = 1
 script = ExtResource("1_u704b")
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
