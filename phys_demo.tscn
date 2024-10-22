@@ -1,0 +1,129 @@
+[gd_scene load_steps=7 format=3 uid="uid://ul1a374mgdgy"]
+
+[ext_resource type="PackedScene" uid="uid://dn6la5jdj8nas" path="res://phys_ball.tscn" id="1_6hwoh"]
+[ext_resource type="Script" path="res://phys_demo.gd" id="1_7yrnc"]
+[ext_resource type="LabelSettings" uid="uid://bbdv5q0yw2mmr" path="res://Medium_Font.tres" id="2_ep1tu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aib8q"]
+size = Vector2(1153, 66)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_62pqy"]
+
+[sub_resource type="Theme" id="Theme_5xp4v"]
+default_font_size = 35
+
+[node name="phys_demo" type="Node2D"]
+script = ExtResource("1_7yrnc")
+
+[node name="phys_ball" parent="." instance=ExtResource("1_6hwoh")]
+position = Vector2(747, 141)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(573, 661)
+shape = SubResource("RectangleShape2D_aib8q")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
+scale = Vector2(1153, 66)
+texture = SubResource("PlaceholderTexture2D_62pqy")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(562, -24)
+shape = SubResource("RectangleShape2D_aib8q")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D4"]
+scale = Vector2(1153, 66)
+texture = SubResource("PlaceholderTexture2D_62pqy")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-37.0001, 296)
+rotation = 1.57085
+scale = Vector2(0.609868, 1.02644)
+shape = SubResource("RectangleShape2D_aib8q")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D3"]
+scale = Vector2(1153, 66)
+texture = SubResource("PlaceholderTexture2D_62pqy")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 534.0
+offset_bottom = 311.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Gravity:"
+label_settings = ExtResource("2_ep1tu")
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 177.0
+offset_right = 152.0
+offset_bottom = 230.0
+text = "Velocity(x,y):"
+label_settings = ExtResource("2_ep1tu")
+
+[node name="Label3" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 117.0
+offset_right = 147.0
+offset_bottom = 170.0
+text = "Inseria:"
+label_settings = ExtResource("2_ep1tu")
+
+[node name="grav_slider" type="HSlider" parent="Panel"]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 22.0
+offset_right = 489.0
+offset_bottom = 38.0
+max_value = 1000.0
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 55.0
+offset_right = 498.0
+offset_bottom = 112.0
+theme = SubResource("Theme_5xp4v")
+text = "Apply Force"
+
+[node name="Button3" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 231.0
+offset_right = 504.0
+offset_bottom = 288.0
+theme = SubResource("Theme_5xp4v")
+text = "Apply Adjustments"
+
+[node name="txtInseria" type="LineEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 133.0
+offset_right = 495.0
+offset_bottom = 164.0
+
+[node name="txtValX" type="LineEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 252.0
+offset_top = 193.0
+offset_right = 367.0
+offset_bottom = 224.0
+
+[node name="txtValY" type="LineEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 380.0
+offset_top = 193.0
+offset_right = 495.0
+offset_bottom = 224.0
+
+[connection signal="value_changed" from="Panel/grav_slider" to="." method="_on_grav_slider_value_changed"]
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button3" to="." method="_on_button_3_pressed"]
