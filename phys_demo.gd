@@ -6,7 +6,7 @@ func _ready() -> void:
 	$Panel/grav_slider.value = $phys_ball.gravity_scale
 	
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.pressed:
+	if event is InputEventMouseButton and event.pressed and entered == false:
 		var nball = physball.instantiate()
 		nball.position = event.position
 		nball.gravity_scale = $Panel/grav_slider.value
@@ -36,3 +36,15 @@ func _on_button_3_pressed() -> void:
 		if child is RigidBody2D:
 			child.inertia = inertia
 			child.linear_velocity = velocity
+
+func _physics_process(delta: float) -> void:
+	print(delta)
+	print(entered)
+
+var entered = false
+func _on_panel_mouse_entered() -> void:
+	entered = true
+
+
+func _on_rigid_body_2d_mouse_exited() -> void:
+	entered = false # not finished
