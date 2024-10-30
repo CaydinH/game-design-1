@@ -22,7 +22,7 @@ func _on_grav_slider_value_changed(value: float) -> void:
 func _on_button_pressed() -> void:
 	for child in get_children():
 		if child is RigidBody2D:
-			var force = randi_range(50,1000)
+			var force = randi_range(500,10000)
 			child.apply_central_force(Vector2(1,0) * force) # or Vector2.RIGHT
 			
 
@@ -38,6 +38,9 @@ func _on_button_3_pressed() -> void:
 			child.linear_velocity = velocity
 
 func _physics_process(delta: float) -> void:
+	var nball = physball.instantiate()
+	var acceleration = nball.linear_velocity*delta
+	nball.linear_velocity *= acceleration
 	print(delta)
 	print(entered)
 

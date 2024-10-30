@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://c07i6phmkpqmi"]
+
+[ext_resource type="Script" path="res://high_scores.gd" id="1_nmn7v"]
+[ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Big_Font.tres" id="2_0q6cr"]
+
+[node name="highScores" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nmn7v")
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 357.0
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 422.0
+offset_right = 349.0
+offset_bottom = 489.0
+theme = ExtResource("2_0q6cr")
+
+[node name="LineEdit2" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 791.0
+offset_top = 422.0
+offset_right = 1109.0
+offset_bottom = 489.0
+theme = ExtResource("2_0q6cr")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 503.0
+offset_right = 349.0
+offset_bottom = 596.0
+theme = ExtResource("2_0q6cr")
+text = "Add Score"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 794.0
+offset_top = 503.0
+offset_right = 1109.0
+offset_bottom = 596.0
+theme = ExtResource("2_0q6cr")
+text = "Remove Score #..."
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

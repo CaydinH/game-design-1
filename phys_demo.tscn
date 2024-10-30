@@ -1,19 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://ul1a374mgdgy"]
+[gd_scene load_steps=7 format=3 uid="uid://ul1a374mgdgy"]
 
 [ext_resource type="PackedScene" uid="uid://dn6la5jdj8nas" path="res://phys_ball.tscn" id="1_6hwoh"]
 [ext_resource type="Script" path="res://phys_demo.gd" id="1_7yrnc"]
 [ext_resource type="LabelSettings" uid="uid://bbdv5q0yw2mmr" path="res://Medium_Font.tres" id="2_ep1tu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aib8q"]
-size = Vector2(1153, 66)
+size = Vector2(1153, 55)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_62pqy"]
 
 [sub_resource type="Theme" id="Theme_5xp4v"]
 default_font_size = 35
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ks26"]
-size = Vector2(543.5, 320.5)
 
 [node name="phys_demo" type="Node2D"]
 script = ExtResource("1_7yrnc")
@@ -28,24 +25,6 @@ position = Vector2(573, 661)
 shape = SubResource("RectangleShape2D_aib8q")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
-scale = Vector2(1153, 66)
-texture = SubResource("PlaceholderTexture2D_62pqy")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(562, -24)
-shape = SubResource("RectangleShape2D_aib8q")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D4"]
-scale = Vector2(1153, 66)
-texture = SubResource("PlaceholderTexture2D_62pqy")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-37.0001, 296)
-rotation = 1.57085
-scale = Vector2(0.609868, 1.02644)
-shape = SubResource("RectangleShape2D_aib8q")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D3"]
 scale = Vector2(1153, 66)
 texture = SubResource("PlaceholderTexture2D_62pqy")
 
@@ -86,7 +65,7 @@ offset_left = 159.0
 offset_top = 22.0
 offset_right = 489.0
 offset_bottom = 38.0
-max_value = 1000.0
+max_value = 10.0
 
 [node name="Button" type="Button" parent="Panel"]
 layout_mode = 0
@@ -127,14 +106,33 @@ offset_top = 193.0
 offset_right = 495.0
 offset_bottom = 224.0
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(271.25, 158.75)
-shape = SubResource("RectangleShape2D_6ks26")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(1089, 538)
+rotation = -1.52301
+shape = SubResource("RectangleShape2D_aib8q")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2/CollisionShape2D"]
+position = Vector2(600, -543)
+rotation = -1.57355
+scale = Vector2(1153, 66)
+texture = SubResource("PlaceholderTexture2D_62pqy")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-46.0001, 161)
+rotation = 1.5466
+shape = SubResource("RectangleShape2D_aib8q")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3/CollisionShape2D"]
+position = Vector2(-608, -536)
+rotation = -1.57355
+scale = Vector2(1153, 66)
+texture = SubResource("PlaceholderTexture2D_62pqy")
 
 [connection signal="mouse_entered" from="Panel" to="." method="_on_panel_mouse_entered"]
 [connection signal="value_changed" from="Panel/grav_slider" to="." method="_on_grav_slider_value_changed"]
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/Button3" to="." method="_on_button_3_pressed"]
-[connection signal="mouse_exited" from="RigidBody2D" to="." method="_on_rigid_body_2d_mouse_exited"]
