@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuepbrqtkqg01"]
+
+[ext_resource type="Script" path="res://Link_Like_Game/player_hud.gd" id="1_4j11h"]
+[ext_resource type="Texture2D" uid="uid://d0fp4ctrfla14" path="res://Assets/Sprites/zelda_like/zelda_like/objects.png" id="1_11j0l"]
+[ext_resource type="LabelSettings" uid="uid://bbdv5q0yw2mmr" path="res://Medium_Font.tres" id="3_lspqj"]
+
+[node name="playerHUD" type="CanvasLayer" groups=["HUD"]]
+script = ExtResource("1_4j11h")
+
+[node name="playerHealth" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="hearts" type="Sprite2D" parent="playerHealth"]
+position = Vector2(40, 40)
+scale = Vector2(5, 5)
+texture = ExtResource("1_11j0l")
+hframes = 33
+vframes = 20
+frame = 8
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+position = Vector2(38, 2)
+scale = Vector2(5, 5)
+texture = ExtResource("1_11j0l")
+hframes = 34
+vframes = 20
+frame = 136
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0.885643, 0.666981, 0, 1)
+offset_left = 68.0
+offset_top = 580.0
+offset_right = 168.0
+offset_bottom = 637.0
+text = "000"
+label_settings = ExtResource("3_lspqj")
+vertical_alignment = 1
