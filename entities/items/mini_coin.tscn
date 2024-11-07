@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://fc8146rogemm"]
+
+[ext_resource type="Texture2D" uid="uid://d0fp4ctrfla14" path="res://Assets/Sprites/zelda_like/zelda_like/objects.png" id="1_1o0gm"]
+[ext_resource type="Script" path="res://entities/items/mini_coin.gd" id="1_hs6b4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1o55"]
+atlas = ExtResource("1_1o0gm")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8g4rh"]
+atlas = ExtResource("1_1o0gm")
+region = Rect2(16, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ax2i"]
+atlas = ExtResource("1_1o0gm")
+region = Rect2(32, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hj21s"]
+atlas = ExtResource("1_1o0gm")
+region = Rect2(48, 64, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pgokn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1o55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8g4rh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ax2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hj21s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bbi3l"]
+radius = 12.0
+
+[node name="mini_coin" type="Node2D"]
+script = ExtResource("1_hs6b4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0, 0.705882, 0.027451, 1)
+sprite_frames = SubResource("SpriteFrames_pgokn")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_bbi3l")
