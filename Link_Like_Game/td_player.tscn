@@ -388,3 +388,5 @@ offset_bottom = -1.0
 shape = SubResource("CapsuleShape2D_bdum1")
 
 [node name="playerHUD" parent="." instance=ExtResource("4_qkbh5")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

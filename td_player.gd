@@ -1,12 +1,16 @@
 extends CharacterBody2D
 
+#TODO: attack/preload sounds - death, hurt, minicoin/heart, charge_attack
+# aud_player.stream = sound.mp3
+# 
+
 const SPEED = 100.0
 const MAXIMUM_OBTAINABLE_HEALTH = 400.0
 enum  STATES { IDLE=0, DEAD, DAMAGED, ATTACKING, CHARGING }
 
 @export var data = {
-	"max_health": 60.0,  # 20hp per heart, 5 per fraction
-	"health": 30.0,      # Min 60 Max 400
+	"max_health": 160.0,  # 20hp per heart, 5 per fraction
+	"health": 80.0,      # Min 60 Max 400
 	"money": 100,
 	"state": STATES.IDLE,
 	"secondaries": [],
@@ -21,6 +25,8 @@ var charge_time = 2.5
 var charge_start_time = 0.0
 
 var slash_scene = preload("res://entities/attacks/slash.tscn")
+var damage_shader = preload("res://Assets/shaders/take_damage.tres")
+var attack_sound = preload("res://Assets/sounds/slash.wav")
 
 func get_direction_name():
 	return ["right", "down", "left", "up"][
@@ -28,6 +34,7 @@ func get_direction_name():
 	]
 
 @onready var playerHUD = get_tree().get_first_node_in_group("HUD")
+@onready var aud_player = $AudioStreamPlayer2D
 
 func attack():
 	data.state = STATES.ATTACKING
@@ -40,6 +47,8 @@ func attack():
 	slash.position = attack_direction * 20.0
 	slash.rotation = Vector2().angle_to_point(-attack_direction)
 	add_child(slash)
+	aud_player.stream = attack_sound
+	aud_player.play()
 	animation_lock = 0.2
 	
 func charged_attack():
@@ -79,7 +88,8 @@ func take_damage(dmg):
 		data.state = STATES.DAMAGED
 		damage_lock = 0.5
 		animation_lock = dmg * 0.005
-		#TODO: damage shader
+		$AnimatedSprite2D.material = damage_shader.duplicate()
+		$AnimatedSprite2D.material.set_shader_parameter("intensity", 0.5)
 		if data.health > 0:
 			#TODO play damage sound
 			pass
@@ -95,6 +105,9 @@ func _physics_process(delta: float) -> void:
 	damage_lock = max(damage_lock-delta, 0.0)
 	
 	if animation_lock == 0.0 and data.state != STATES.DEAD:
+		if data.state == STATES.DAMAGED and max(damage_lock - delta, 0.0):
+			$AnimatedSprite2D.material = null
+		
 		if data.state != STATES.CHARGING:
 			data.state = STATES.IDLE
 	
