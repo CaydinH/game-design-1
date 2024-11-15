@@ -3,7 +3,7 @@ extends Area2D
 @export var next_level = ""
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
+	if body.is_in_group("Player"):
 		if next_level == "":
 			OS.alert("No Next Level")
 		else:

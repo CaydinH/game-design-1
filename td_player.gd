@@ -10,7 +10,7 @@ enum  STATES { IDLE=0, DEAD, DAMAGED, ATTACKING, CHARGING }
 
 @export var data = {
 	"max_health": 160.0,  # 20hp per heart, 5 per fraction
-	"health": 80.0,      # Min 60 Max 400
+	"health": 160.0,      # Min 60 Max 400
 	"money": 100,
 	"state": STATES.IDLE,
 	"secondaries": [],
