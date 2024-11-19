@@ -3,36 +3,36 @@
 [ext_resource type="Script" path="res://entities/items/heart_container.gd" id="1_61n27"]
 [ext_resource type="Texture2D" uid="uid://d0fp4ctrfla14" path="res://Assets/Sprites/zelda_like/zelda_like/objects.png" id="1_jd6bf"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_miqd0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kxup"]
 atlas = ExtResource("1_jd6bf")
-region = Rect2(64, 48, 16, 16)
+region = Rect2(64, 128, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7oamb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjt4m"]
 atlas = ExtResource("1_jd6bf")
-region = Rect2(80, 48, 16, 16)
+region = Rect2(80, 128, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fx83i"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_otakq"]
 atlas = ExtResource("1_jd6bf")
-region = Rect2(96, 48, 16, 16)
+region = Rect2(96, 128, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2yysp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qd4o"]
 atlas = ExtResource("1_jd6bf")
-region = Rect2(112, 48, 16, 16)
+region = Rect2(112, 128, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ubat5"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_miqd0")
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_7kxup")
 }, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7oamb")
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_fjt4m")
 }, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fx83i")
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_otakq")
 }, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2yysp")
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_5qd4o")
 }],
 "loop": true,
 "name": &"default",
@@ -48,6 +48,7 @@ script = ExtResource("1_61n27")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ubat5")
 autoplay = "default"
+frame_progress = 0.80292
 
 [node name="Area2D" type="Area2D" parent="."]
 

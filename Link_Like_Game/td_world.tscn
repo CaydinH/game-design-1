@@ -2207,7 +2207,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_3jkb0")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t2ntv"]
-size = Vector2(60, 40)
+size = Vector2(60, 28)
 
 [node name="td_world" type="Node2D"]
 
@@ -2250,7 +2250,7 @@ script = ExtResource("7_66oxn")
 next_level = "Link_Like_Game/td_world_2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="change_lvl"]
-position = Vector2(0, 68)
+position = Vector2(1, 20)
 shape = SubResource("RectangleShape2D_t2ntv")
 
 [node name="Sprite2D" type="Sprite2D" parent="change_lvl"]

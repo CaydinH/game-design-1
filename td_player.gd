@@ -51,6 +51,13 @@ func attack():
 	aud_player.play()
 	animation_lock = 0.2
 	
+func pickup_heart_container():
+	data.max_health += 20
+	data.max_health = clamp(data.max_health, 0, 400)
+	data.health = data.max_health
+	playerHUD.draw_hearts()
+	
+	
 func charged_attack():
 	data.state = STATES.ATTACKING	
 	$AnimatedSprite2D.play("swipe_charge")
@@ -140,6 +147,12 @@ func _physics_process(delta: float) -> void:
 				charged_attack()
 			else:
 				data.state = STATES.IDLE
+		if Input.is_action_just_pressed("ui_select"):
+			for entity in get_tree().get_nodes_in_group("Interactable"):
+				if entity.in_range(self):
+					entity.interact(self)
+					data.state = STATES.IDLE
+					return
 		
 	if Input.is_action_just_pressed("ui_cancel"):
 		$Camera2D/pause_menu.show()
