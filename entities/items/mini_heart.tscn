@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bptaitvdmho12"]
+[gd_scene load_steps=9 format=3 uid="uid://cel0btfhc066i"]
 
-[ext_resource type="Script" path="res://Link_Like_Game/mini_heart.gd" id="1_lkw2j"]
+[ext_resource type="Script" path="res://entities/items/mini_heart.gd" id="1_lkw2j"]
 [ext_resource type="Texture2D" uid="uid://d0fp4ctrfla14" path="res://Assets/Sprites/zelda_like/zelda_like/objects.png" id="2_q1j4q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jm2qd"]
