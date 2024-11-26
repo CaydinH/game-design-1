@@ -1,9 +1,10 @@
-[gd_scene load_steps=50 format=3 uid="uid://tcy2rvqj0x37"]
+[gd_scene load_steps=51 format=3 uid="uid://tcy2rvqj0x37"]
 
-[ext_resource type="Script" path="res://td_player.gd" id="1_6cdqg"]
+[ext_resource type="Script" path="res://Link_Like_Game/td_player.gd" id="1_6cdqg"]
 [ext_resource type="Texture2D" uid="uid://bl8rv7su7xih1" path="res://Assets/Sprites/zelda_like/zelda_like/character.png" id="2_lhusr"]
-[ext_resource type="PackedScene" uid="uid://ckrl83ktlqwhs" path="res://pause_menu.tscn" id="3_mwo81"]
+[ext_resource type="PackedScene" uid="uid://ckrl83ktlqwhs" path="res://Platformer/pause_menu.tscn" id="3_mwo81"]
 [ext_resource type="PackedScene" uid="uid://cuepbrqtkqg01" path="res://Link_Like_Game/player_hud.tscn" id="4_qkbh5"]
+[ext_resource type="PackedScene" uid="uid://b6cymsgqqmglb" path="res://Link_Like_Game/td_game_over.tscn" id="5_k8y0u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_guhhb"]
 atlas = ExtResource("2_lhusr")
@@ -390,3 +391,5 @@ shape = SubResource("CapsuleShape2D_bdum1")
 [node name="playerHUD" parent="." instance=ExtResource("4_qkbh5")]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="TD_GameOver" parent="." instance=ExtResource("5_k8y0u")]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cvlne50rqnp2r"]
 
-[ext_resource type="Script" path="res://about_me.gd" id="1_kk568"]
-[ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Big_Font.tres" id="2_8lisw"]
+[ext_resource type="Script" path="res://LangDocs/about_me.gd" id="1_kk568"]
+[ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Assets/Big_Font.tres" id="2_8lisw"]
 
 [node name="AboutMe" type="Control"]
 layout_mode = 3

@@ -1,24 +1,34 @@
-[gd_scene load_steps=9 format=3 uid="uid://6a284l16n1qb"]
+[gd_scene load_steps=12 format=3 uid="uid://6a284l16n1qb"]
 
-[ext_resource type="Texture2D" uid="uid://dtqmlv8k153yd" path="res://icon.svg" id="1_84ayd"]
-[ext_resource type="Script" path="res://plt_enemy.gd" id="1_s0qct"]
+[ext_resource type="Texture2D" uid="uid://dtqmlv8k153yd" path="res://Assets/Sprites/icon.svg" id="1_84ayd"]
+[ext_resource type="Script" path="res://Platformer/plt_enemy.gd" id="1_s0qct"]
 [ext_resource type="Texture2D" uid="uid://bx1lx7olb6x2w" path="res://Assets/Sprites/characters.png" id="3_pqgxg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fq14g"]
 atlas = ExtResource("3_pqgxg")
 region = Rect2(0, 96, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_20dgi"]
-atlas = ExtResource("3_pqgxg")
-region = Rect2(32, 96, 32, 32)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_04b1r"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uj1mk"]
-atlas = ExtResource("3_pqgxg")
-region = Rect2(64, 96, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_0p872"]
+atlas = SubResource("CompressedTexture2D_04b1r")
+region = Rect2(0, 0, 13, 15)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x1bkq"]
-atlas = ExtResource("3_pqgxg")
-region = Rect2(96, 96, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kgdn"]
+atlas = SubResource("CompressedTexture2D_04b1r")
+region = Rect2(13, 0, 13, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njx3v"]
+atlas = SubResource("CompressedTexture2D_04b1r")
+region = Rect2(26, 0, 13, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d80vf"]
+atlas = SubResource("CompressedTexture2D_04b1r")
+region = Rect2(39, 0, 13, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byes4"]
+atlas = SubResource("CompressedTexture2D_04b1r")
+region = Rect2(52, 0, 13, 15)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ccwn5"]
 animations = [{
@@ -32,13 +42,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_20dgi")
+"texture": SubResource("AtlasTexture_0p872")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uj1mk")
+"texture": SubResource("AtlasTexture_1kgdn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_x1bkq")
+"texture": SubResource("AtlasTexture_njx3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d80vf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_byes4")
 }],
 "loop": true,
 "name": &"move",
@@ -64,14 +80,17 @@ position = Vector2(0, -9)
 scale = Vector2(0.96875, 1)
 sprite_frames = SubResource("SpriteFrames_ccwn5")
 animation = &"move"
-frame_progress = 0.484109
+frame_progress = 0.695565
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
 polygon = PackedVector2Array(8, -8, -2, -8, -4, -2, -6, -2, -9, 1, -9, 8, 5, 8, 7, 3, 10, -4)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 polygon = PackedVector2Array(-3, -1, -6, -1, -8, 1, -8, 5, -9, 6, -8, 7, 4, 7, 6, 5, 6, 1, 8, 0, 8, -3, 9, -4, 7, -7, -1, -7, -2, -5)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

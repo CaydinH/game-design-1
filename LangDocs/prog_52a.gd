@@ -1,26 +1,24 @@
 extends Control
 
-func sayHi():
-	print("Hello, world!")
 
-func getArea(length, width):
-	var area = length * width
-	return area  # Send value back out of function
-
-func getPerim(length, width):
-	return 2 * length + 2 * width
 
 func _on_btn_calc_pressed() -> void:
-	sayHi()
-	var l = int($txtLen.text)
-	var w = int($txtWid.text)
-	var a = getArea(l, w)
-	var p = getPerim(l, w)
-	$lblOut.text = "Area: %d\nPerimeter: %d" % [a, p]
-
-
+	var lenght = int($TxtLen.text)
+	var width = int($TxtWid.text)
+	var area = lenght * width
+	var perim = 2 * lenght + 2 * width
+	$LblArea.text= "Area: " + str(area)
+	$LblPerim.text= "Perimeter: " + str(perim)
+	# Opperators: + - * / %     **(Pow)
+	# str - string (text)
+	# int - integer (whole num)
+	# flaot
 func _on_btn_clear_pressed() -> void:
-	pass # Replace with function body.
+	$TxtLen.text= ""
+	$TxtWid.text= ""
+	$LblArea.text= ""
+	$LblPerim.text= ""
+	
 
 
 func _on_btn_exit_pressed() -> void:

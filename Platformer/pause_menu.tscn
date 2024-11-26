@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ckrl83ktlqwhs"]
 
-[ext_resource type="Script" path="res://pause_menu.gd" id="1_oaeio"]
-[ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Big_Font.tres" id="2_68f7i"]
+[ext_resource type="Script" path="res://Platformer/pause_menu.gd" id="1_oaeio"]
+[ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Assets/Big_Font.tres" id="2_68f7i"]
 
 [node name="pause_menu" type="Control"]
 layout_mode = 3

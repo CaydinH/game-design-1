@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dojpj2nk54k1w"]
 
-[ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Big_Font.tres" id="1_qeng6"]
-[ext_resource type="Script" path="res://plt_main_menu.gd" id="1_tv31e"]
+[ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Assets/Big_Font.tres" id="1_qeng6"]
+[ext_resource type="Script" path="res://Platformer/plt_main_menu.gd" id="1_tv31e"]
 
 [node name="Plt_main_menu" type="Node2D"]
 script = ExtResource("1_tv31e")

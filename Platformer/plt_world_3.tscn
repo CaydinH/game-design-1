@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=4 uid="uid://bv1db2b8biyl3"]
 
 [ext_resource type="Texture2D" uid="uid://ccnknst8albbq" path="res://Assets/Sprites/phase-2.png" id="1_7v1ub"]
-[ext_resource type="PackedScene" uid="uid://cnp4vnveckumw" path="res://plt_player.tscn" id="2_ok8sl"]
+[ext_resource type="PackedScene" uid="uid://cnp4vnveckumw" path="res://Platformer/plt_player.tscn" id="2_ok8sl"]
 [ext_resource type="PackedScene" uid="uid://b2j3dc12rnro4" path="res://change_lvl.tscn" id="3_kd6jw"]
 [ext_resource type="PackedScene" uid="uid://dhkobv0vul0qr" path="res://death_floor.tscn" id="4_xw7dp"]
-[ext_resource type="PackedScene" uid="uid://6a284l16n1qb" path="res://plt_enemy.tscn" id="5_3fafk"]
+[ext_resource type="PackedScene" uid="uid://6a284l16n1qb" path="res://Platformer/plt_enemy.tscn" id="5_3fafk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vh4ul"]
 texture = ExtResource("1_7v1ub")

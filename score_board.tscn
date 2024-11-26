@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://k4urggheq5h0"]
 
 [ext_resource type="Script" path="res://score_board.gd" id="1_qpa3b"]
-[ext_resource type="LabelSettings" uid="uid://bbdv5q0yw2mmr" path="res://Medium_Font.tres" id="2_sv51f"]
-[ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Big_Font.tres" id="3_6t178"]
+[ext_resource type="LabelSettings" uid="uid://bbdv5q0yw2mmr" path="res://Assets/Medium_Font.tres" id="2_sv51f"]
+[ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Assets/Big_Font.tres" id="3_6t178"]
 
 [node name="ScoreBoard" type="Control"]
 layout_mode = 3

@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dik0oi2r4rhjm"]
 
-[ext_resource type="LabelSettings" uid="uid://bbdv5q0yw2mmr" path="res://Medium_Font.tres" id="1_1gst5"]
+[ext_resource type="LabelSettings" uid="uid://bbdv5q0yw2mmr" path="res://Assets/Medium_Font.tres" id="1_1gst5"]
 [ext_resource type="Script" path="res://LangDocs/lp_4_2.gd" id="1_jbb4j"]
-[ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Big_Font.tres" id="3_wayab"]
+[ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Assets/Big_Font.tres" id="3_wayab"]
 
 [node name="LP_4-2" type="Control"]
 layout_mode = 3

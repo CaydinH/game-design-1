@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bn1vf1jvicr62"]
 
-[ext_resource type="Script" path="res://prog_122b.gd" id="1_4gs8m"]
-[ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Big_Font.tres" id="2_3861d"]
+[ext_resource type="Script" path="res://LangDocs/prog_122b.gd" id="1_4gs8m"]
+[ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Assets/Big_Font.tres" id="2_3861d"]
 
 [node name="Prog122b" type="Control"]
 layout_mode = 3

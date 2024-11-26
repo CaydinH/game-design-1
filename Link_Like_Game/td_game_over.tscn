@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6cymsgqqmglb"]
+
+[ext_resource type="Script" path="res://td_game_over.gd" id="1_fuovt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6267v"]
+font_size = 100
+font_color = Color(0.928844, 0.510883, 0.32517, 1)
+outline_size = 5
+
+[sub_resource type="Theme" id="Theme_hrawo"]
+default_font_size = 50
+
+[node name="TD_GameOver" type="CanvasLayer"]
+visible = false
+script = ExtResource("1_fuovt")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.499
+anchor_top = 0.231
+anchor_right = 0.499
+anchor_bottom = 0.231
+offset_left = -574.848
+offset_top = -149.688
+offset_right = 575.152
+offset_bottom = 150.312
+text = "GAME OVER!!"
+label_settings = SubResource("LabelSettings_6267v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Btn_restart" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.229
+anchor_top = 0.759
+anchor_right = 0.229
+anchor_bottom = 0.759
+offset_left = -205.808
+offset_top = -88.832
+offset_right = 205.192
+offset_bottom = 89.168
+theme = SubResource("Theme_hrawo")
+theme_override_colors/font_color = Color(0, 0.601205, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+text = "Restart"
+
+[node name="Btn_quit" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.777
+anchor_top = 0.759
+anchor_right = 0.777
+anchor_bottom = 0.759
+offset_left = -205.104
+offset_top = -88.832
+offset_right = 205.896
+offset_bottom = 89.168
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_hrawo")
+theme_override_colors/font_color = Color(0.863147, 0.236253, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+text = "Quit"
+
+[connection signal="pressed" from="Btn_restart" to="." method="_on_btn_restart_pressed"]
+[connection signal="pressed" from="Btn_quit" to="." method="_on_btn_quit_pressed"]

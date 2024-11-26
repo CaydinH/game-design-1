@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bsxe7f04k6ndm"]
 
-[ext_resource type="Script" path="res://fave_club.gd" id="1_fiawm"]
-[ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Big_Font.tres" id="2_wgutb"]
+[ext_resource type="Script" path="res://LangDocs/fave_club.gd" id="1_fiawm"]
+[ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Assets/Big_Font.tres" id="2_wgutb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5b6jm"]
 font_size = 40

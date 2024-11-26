@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cmpwswik14i1i"]
 
-[ext_resource type="Script" path="res://prog_82a.gd" id="1_27hf1"]
-[ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Big_Font.tres" id="2_5echn"]
+[ext_resource type="Script" path="res://LangDocs/prog_82a.gd" id="1_27hf1"]
+[ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Assets/Big_Font.tres" id="2_5echn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_eph64"]
 line_spacing = 38.0

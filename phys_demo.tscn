@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dn6la5jdj8nas" path="res://phys_ball.tscn" id="1_6hwoh"]
 [ext_resource type="Script" path="res://phys_demo.gd" id="1_7yrnc"]
-[ext_resource type="LabelSettings" uid="uid://bbdv5q0yw2mmr" path="res://Medium_Font.tres" id="2_ep1tu"]
+[ext_resource type="LabelSettings" uid="uid://bbdv5q0yw2mmr" path="res://Assets/Medium_Font.tres" id="2_ep1tu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aib8q"]
 size = Vector2(1153, 55)

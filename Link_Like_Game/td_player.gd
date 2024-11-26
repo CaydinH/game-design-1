@@ -1,16 +1,14 @@
 extends CharacterBody2D
 
-#TODO: attack/preload sounds - death, hurt, minicoin/heart, charge_attack
 # aud_player.stream = sound.mp3
-# 
 
 const SPEED = 100.0
 const MAXIMUM_OBTAINABLE_HEALTH = 400.0
 enum  STATES { IDLE=0, DEAD, DAMAGED, ATTACKING, CHARGING }
 
 @export var data = {
-	"max_health": 160.0,  # 20hp per heart, 5 per fraction
-	"health": 160.0,      # Min 60 Max 400
+	"max_health": 60.0,  # 20hp per heart, 5 per fraction
+	"health": 60.0,      # Min 60 Max 400
 	"money": 100,
 	"state": STATES.IDLE,
 	"secondaries": [],
@@ -27,6 +25,12 @@ var charge_start_time = 0.0
 var slash_scene = preload("res://entities/attacks/slash.tscn")
 var damage_shader = preload("res://Assets/shaders/take_damage.tres")
 var attack_sound = preload("res://Assets/sounds/slash.wav")
+var heart_sound = preload("res://Assets/sounds/pickupheart.wav")
+var coin_sound = preload("res://Assets/sounds/pickupCoin.wav")
+var swoosh_slash = preload("res://Assets/sounds/swoosh.wav")
+var player_death = preload("res://Assets/sounds/death.wav")
+var player_hurt_sound = preload("res://Assets/sounds/playerhurt.wav")
+var slash_ready = preload("res://Assets/sounds/synth.wav")
 
 func get_direction_name():
 	return ["right", "down", "left", "up"][
@@ -73,6 +77,8 @@ func charged_attack():
 		slash.damage *= 1.5
 		add_child(slash)
 		await get_tree().create_timer(0.03).timeout
+		aud_player.stream = swoosh_slash
+		aud_player.play()
 	animation_lock = 0.2
 	await $AnimatedSprite2D.animation_finished
 	data.state = STATES.IDLE
@@ -81,10 +87,14 @@ func _ready() -> void:
 	playerHUD.show()
 	
 func pickup_health(value):
+	aud_player.stream = heart_sound
+	aud_player.play()
 	data.health += value
 	data.health = clamp(data.health, 0, data.max_health)
 	
 func pickup_money(value):
+	aud_player.stream = coin_sound
+	aud_player.play()
 	data.money += value
 	
 signal health_depleted
@@ -98,26 +108,31 @@ func take_damage(dmg):
 		$AnimatedSprite2D.material = damage_shader.duplicate()
 		$AnimatedSprite2D.material.set_shader_parameter("intensity", 0.5)
 		if data.health > 0:
-			#TODO play damage sound
+			aud_player.stream = player_hurt_sound
+			aud_player.play()
 			pass
 		else:
 			data.state = STATES.DEAD
-			#TODO: play death animation and sound
+			aud_player.stream = player_death
+			aud_player.play()
 			await get_tree().create_timer(0.5).timeout
 			health_depleted.emit()
+			$playerHUD.hide()
+			$TD_GameOver.show()
+			
 	pass
 
 func _physics_process(delta: float) -> void:
 	animation_lock = max(animation_lock-delta, 0.0)
 	damage_lock = max(damage_lock-delta, 0.0)
-	
+
 	if animation_lock == 0.0 and data.state != STATES.DEAD:
 		if data.state == STATES.DAMAGED and max(damage_lock - delta, 0.0):
 			$AnimatedSprite2D.material = null
-		
+
 		if data.state != STATES.CHARGING:
 			data.state = STATES.IDLE
-	
+
 		var direction = Vector2(
 			Input.get_axis("ui_left", "ui_right"),
 			Input.get_axis("ui_up", "ui_down")
@@ -172,6 +187,8 @@ func update_animation(direction):
 			a_name += "up"
 		elif look_direction.y > 0:
 			a_name += "down"
+		elif data.state != STATES.IDLE:
+			$AnimatedSprite2D.material.set_shader_parameter("intensity", 0.0)
 		$AnimatedSprite2D.animation = a_name
 		$AnimatedSprite2D.play()
 	pass

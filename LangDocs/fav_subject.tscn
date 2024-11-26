@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c2as4jk67sgi6"]
 
-[ext_resource type="Script" path="res://fav_subject.gd" id="1_7y3v1"]
-[ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Big_Font.tres" id="2_er3ol"]
+[ext_resource type="Script" path="res://LangDocs/fav_subject.gd" id="1_7y3v1"]
+[ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Assets/Big_Font.tres" id="2_er3ol"]
 
 [node name="FavSubject" type="Control"]
 layout_mode = 3

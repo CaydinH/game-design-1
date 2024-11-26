@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://jkhfickt61xw"]
 
 [ext_resource type="Script" path="res://LangDocs/prog_54b.gd" id="1_xbqb6"]
-[ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Big_Font.tres" id="2_ih0c2"]
+[ext_resource type="Theme" uid="uid://cdsoq1v018kq4" path="res://Assets/Big_Font.tres" id="2_ih0c2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g6exr"]
 font_size = 38
