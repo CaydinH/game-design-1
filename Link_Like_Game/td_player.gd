@@ -21,6 +21,7 @@ var animation_lock = 0.0 #lock player while playing attack animation
 var damage_lock = 0.0
 var charge_time = 2.5
 var charge_start_time = 0.0
+var charge_ready = false
 
 var slash_scene = preload("res://entities/attacks/slash.tscn")
 var damage_shader = preload("res://Assets/shaders/take_damage.tres")
@@ -158,7 +159,7 @@ func _physics_process(delta: float) -> void:
 		charge_start_time += delta
 		if Input.is_action_just_released("ui_accept"):
 			if charge_start_time >= charge_time and \
-			   data.state == STATES.CHARGING:
+			   data.state == STATES.CHARGING and charge_ready == false:
 				charged_attack()
 			else:
 				data.state = STATES.IDLE

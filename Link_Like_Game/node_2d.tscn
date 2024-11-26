@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dce54kn6x28ms"]
+
+[ext_resource type="Texture2D" uid="uid://gt1cegq6otgw" path="res://Assets/Sprites/cake.png" id="1_nm4l0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yi12i"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_yi12i")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D/CollisionShape2D"]
+texture = ExtResource("1_nm4l0")
