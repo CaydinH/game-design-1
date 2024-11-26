@@ -2407,7 +2407,7 @@ tile_map_data = PackedByteArray("AAD3//v/AAAHAAMAAAD3//z/AAAHAAMAAAD3//3/AAAHAAM
 tile_set = SubResource("TileSet_3343j")
 
 [node name="td_player" parent="." instance=ExtResource("2_qkp62")]
-position = Vector2(10, -25)
+position = Vector2(91, 17)
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD///r/AAASAAYAAAAAAPr/AAASAAYAAAABAPr/AAASAAYAAAA=")
