@@ -19,7 +19,7 @@ var look_direction = Vector2.DOWN  # Vector2(0,1)
 var attack_direction = look_direction
 var animation_lock = 0.0 #lock player while playing attack animation
 var damage_lock = 0.0
-var charge_time = 2.5
+var charge_time = 0.5
 var charge_start_time = 0.0
 var charge_ready = false
 
@@ -68,7 +68,7 @@ func charged_attack():
 	$AnimatedSprite2D.play("swipe_charge")
 	attack_direction = -look_direction
 	damage_lock = 0.3
-	for i in range(9):
+	for i in range(18):
 		#offset by (i-4) * 45 degrees; [-4,4]
 		var angle = attack_direction.angle() + (i-4) * PI/4
 		var dir = Vector2(cos(angle), sin(angle))
@@ -126,6 +126,9 @@ func take_damage(dmg):
 func _physics_process(delta: float) -> void:
 	animation_lock = max(animation_lock-delta, 0.0)
 	damage_lock = max(damage_lock-delta, 0.0)
+	
+	if Input.is_action_just_pressed("ui_focus_next"):
+		take_damage(data.health)
 
 	if animation_lock == 0.0 and data.state != STATES.DEAD:
 		if data.state == STATES.DAMAGED and max(damage_lock - delta, 0.0):
@@ -159,7 +162,9 @@ func _physics_process(delta: float) -> void:
 		charge_start_time += delta
 		if Input.is_action_just_released("ui_accept"):
 			if charge_start_time >= charge_time and \
-			   data.state == STATES.CHARGING and charge_ready == false:
+			   data.state == STATES.CHARGING:
+				aud_player.stream = slash_ready
+				aud_player.play()
 				charged_attack()
 			else:
 				data.state = STATES.IDLE
@@ -171,8 +176,9 @@ func _physics_process(delta: float) -> void:
 					return
 		
 	if Input.is_action_just_pressed("ui_cancel"):
-		$Camera2D/pause_menu.show()
+		$pause_menu.show()
 		get_tree().paused = true
+		
 	pass
 
 

@@ -1,6 +1,7 @@
 extends CanvasLayer
 
-
+func _ready() -> void:
+	self.process_mode = Node.PROCESS_MODE_ALWAYS
 
 
 func _on_btn_restart_pressed() -> void:

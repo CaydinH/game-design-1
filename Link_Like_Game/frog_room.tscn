@@ -2328,7 +2328,7 @@ position = Vector2(72, 114)
 position = Vector2(73, 103)
 
 [node name="td_player" parent="." instance=ExtResource("4_5bjyv")]
-position = Vector2(103, 57)
+position = Vector2(161, 49)
 
 [node name="Cake" type="Sprite2D" parent="."]
 position = Vector2(105, 102)
