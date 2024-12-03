@@ -2,10 +2,7 @@ extends Node2D
 
 
 @export var contents: Dictionary = {
-	"mini_coin": 5,
-	"mini_coin1": 5,
-	"mini_coin2": 5,
-	"mini_heart": 20,
+	
 }
 
 var OPEN_STATE = false

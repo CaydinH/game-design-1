@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dv1a7lv5dppmv"]
+[gd_scene load_steps=15 format=4 uid="uid://dv1a7lv5dppmv"]
 
 [ext_resource type="Texture2D" uid="uid://bhufk0k4fcywf" path="res://Assets/Sprites/zelda_like/zelda_like/cave.png" id="1_cw5k2"]
 [ext_resource type="Texture2D" uid="uid://3m05qoqmogmn" path="res://Assets/Sprites/zelda_like/zelda_like/Overworld.png" id="2_t5tnf"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://gt1cegq6otgw" path="res://Assets/Sprites/cake.png" id="5_2t07m"]
 [ext_resource type="Script" path="res://change_lvl.gd" id="6_2gfyr"]
 [ext_resource type="Texture2D" uid="uid://c56dgruv3g2xx" path="res://Assets/Sprites/castledoors.png" id="7_vcjsy"]
+[ext_resource type="PackedScene" uid="uid://dx4hl6macqjv0" path="res://entities/objects/chest.tscn" id="8_42gws"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bsbe0"]
 texture = ExtResource("1_cw5k2")
@@ -2328,7 +2329,7 @@ position = Vector2(72, 114)
 position = Vector2(73, 103)
 
 [node name="td_player" parent="." instance=ExtResource("4_5bjyv")]
-position = Vector2(161, 49)
+position = Vector2(136, 53)
 
 [node name="Cake" type="Sprite2D" parent="."]
 position = Vector2(105, 102)
@@ -2337,6 +2338,7 @@ texture = ExtResource("5_2t07m")
 [node name="change_lvl" type="Area2D" parent="."]
 position = Vector2(163, 47)
 script = ExtResource("6_2gfyr")
+next_level = "Link_Like_Game/td_world_2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="change_lvl"]
 position = Vector2(-3, -36)
@@ -2347,5 +2349,16 @@ visible = false
 position = Vector2(0, -8.5)
 scale = Vector2(0.78125, 1.19792)
 texture = ExtResource("7_vcjsy")
+
+[node name="chest" parent="." instance=ExtResource("8_42gws")]
+position = Vector2(104, 151)
+contents = {
+"mini_coin": 0,
+"mini_coin1": 0,
+"mini_coin2": 0,
+"mini_coin3": 0,
+"mini_coin4": 0,
+"mini_coin5": 0
+}
 
 [connection signal="body_entered" from="change_lvl" to="change_lvl" method="_on_body_entered"]
